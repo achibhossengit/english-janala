@@ -14,6 +14,7 @@ const login = () => {
   if (password.value == 1234) {
     password.value = "";
     name.value = "";
+    hero.classList.add("hidden");
     navbar.classList.remove("hidden");
     vocub.classList.remove("hidden");
     faq.classList.remove("hidden");
@@ -23,6 +24,7 @@ const login = () => {
 };
 
 const logout = () => {
+  hero.classList.remove("hidden");
   navbar.classList.add("hidden");
   vocub.classList.add("hidden");
   faq.classList.add("hidden");
