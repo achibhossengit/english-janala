@@ -37,7 +37,7 @@
 </head>
 
 <body class="">
-    <header class="border-b-2 border-gray-300 bg-gray-100">
+    <header id="navbar" class="border-b-2 border-gray-300 bg-gray-100">
         <nav
             class="flex flex-col justify-center gap-3 md:gap-0 md:flex-row md:justify-between items-center py-5 container mx-auto px-5">
             <div class="flex items-center gap-2 text-xl font-bold">
@@ -50,26 +50,26 @@
                     FAQ</button>
                 <button class="btn btn-sm btn-soft btn-primary border-blue-700"><i class="fa-solid fa-book-open"></i>
                     Learn</button>
-                <button class="btn btn-sm btn-soft btn-primary border-blue-700"><i
+                <button onclick="logout()" class="btn btn-sm btn-soft btn-primary border-blue-700"><i
                         class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </div>
         </nav>
     </header>
     <!-- hero section -->
-    <section class="container mx-auto px-5 my-10">
+    <section id="hero" class="container flex justify-center mx-auto px-5 min-h-screen">
         <div class="flex flex-col-reverse md:flex-row md:justify-between items-center">
             <div class="space-y-4 max-w-150">
                 <p class="text-3xl font-bold"><span class="text-blue-500">English</span> is Easy!!</p>
                 <p class="hind-siliguri-medium">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার
                     দক্ষতা বাড়াতে চান, আমাদের
                     Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
-                <form class="flex flex-col items-center md:items-start space-y-3">
-                    <input type="text" placeholder="Enter your name"
+                <div class="flex flex-col items-center md:items-start space-y-3">
+                    <input id="name" type="text" placeholder="Enter your name"
                         class="input focus:outline-none focus:border-blue-600" />
-                    <input type="password" placeholder="Provide password (123456)"
+                    <input id="password" type="password" placeholder="Provide password (1234)"
                         class="input focus:outline-none focus:border-blue-600" />
-                    <button class="btn btn-primary w-28" type="submit">Get Started</button>
-                </form>
+                    <button onclick="login()" class="btn btn-primary w-28" type="submit">Get Started</button>
+                </div>
             </div>
             <div>
                 <img class="max-w-[300px] md:max-w-[450px]" src="assets/hero-student.png" alt="">
@@ -78,7 +78,7 @@
     </section>
 
     <!-- vocabulary section -->
-    <section class="container mx-auto space-y-7 px-5">
+    <section id="vocub" class="container mx-auto space-y-7 px-5">
         <h1 class="text-center text-xl md:text-2xl lg:text-3xl font-bold">
             <span class="text-[#00BCFF] poppins-bold">Let's</span> Learn Vocabularies
         </h1>
@@ -94,7 +94,8 @@
             </button>
         </div>
         <!-- dynamic cart div -->
-        <div class=" bg-gray-100 rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
+        <div id="card-container"
+            class=" bg-gray-100 rounded-xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-5">
             <!-- card -->
             <div class="p-4 md:p-5 bg-white text-center space-y-3 rounded-md">
                 <h3 class="text-lg md:text-xl font-bold poppins-bold">Eager</h3>
@@ -111,14 +112,14 @@
             </div>
         </div>
         <!-- not selected lession error div -->
-        <div class="hidden text-center py-10 md:py-14 bg-gray-100 rounded-xl">
+        <div id="select-error" class="hidden text-center py-10 md:py-14 bg-gray-100 rounded-xl">
             <p class="text-xs md:text-sm text-gray-400 mb-3 hind-siliguri-medium">আপনি এখনো কোন <span
                     class="poppins-bold">Lesson Select</span> করেন নি।</p>
             <p class="text-lg md:text-xl text-gray-600 font-semibold">একটি <span class="poppins-bold">Lesson
                     Select</span> করুন।</p>
         </div>
         <!-- no vocabulary error div -->
-        <div class="hidden text-center py-10 md:py-14 bg-gray-100 rounded-xl">
+        <div id="length-error" class="hidden text-center py-10 md:py-14 bg-gray-100 rounded-xl">
             <i class="fa-solid fa-triangle-exclamation text-[80px] md:text-[100px] text-gray-500"></i>
             <p class="text-xs md:text-sm text-gray-400 my-3 hind-siliguri-medium">এই Lesson এ এখনো কোন Vocabulary যুক্ত
                 করা হয়নি।</p>
@@ -127,7 +128,7 @@
     </section>
 
     <!-- FAQ section -->
-    <section class="container mx-auto px-5 my-32">
+    <section id="FAQ" class="container mx-auto px-5 my-32">
         <h1 class="text-center text-xl md:text-2xl lg:text-3xl font-bold mb-10">
             <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h1>
@@ -155,7 +156,7 @@
     </section>
 
     <!-- footer -->
-    <footer class="bg-white border-t-2 border-gray-300">
+    <footer id="footer" class="bg-white border-t-2 border-gray-300">
         <div class="footer sm:footer-horizontal items-center py-14 container mx-auto px-5">
             <aside class="">
                 <div class="flex items-center gap-2 text-xl font-bold">
@@ -186,6 +187,7 @@
         </div>
     </footer>
 
+    <script src="js/index.js"></script>
 </body>
 
 </html>
