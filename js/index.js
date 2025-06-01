@@ -30,4 +30,25 @@ const logout = () => {
   faq.classList.add("hidden");
 };
 
+const showLabels = (labels) => {
+  const labelContainer = document.getElementById("label-container");
+  labels.map((label, index) => {
+    const newLabel = document.createElement("div");
+    newLabel.innerHTML = `
+      <button id=${label.id} class="btn btn-sm btn-soft btn-primary border-blue-700 text-sm md:text-base">
+        <i class="fa-solid fa-book-open"></i> Lession-${index+1}
+      </button>
+    `;
+    labelContainer.appendChild(newLabel)
+  });
+};
+
+const fetchLabel = () => {
+  fetch("https://openapi.programming-hero.com/api/levels/all")
+    .then((res) => res.json())
+    .then((data) => showLabels(data.data));
+};
+
 logout();
+fetchLabel();
+
