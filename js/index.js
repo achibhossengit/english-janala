@@ -40,5 +40,5 @@ const handleLabelClick = (label_no, e) => {
   fetchWordsByLabel(label_no);
 };
 
-// logout();
+logout();
 fetchLabel();
