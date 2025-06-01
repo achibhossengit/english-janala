@@ -39,6 +39,7 @@ const displayDetails = (word) => {
 };
 
 const displayLabel = (labels) => {
+  document.getElementById("lebel-spiner").classList.add("hidden");
   const labelContainer = document.getElementById("label-container");
   labels.forEach((label) => {
     const newLabel = document.createElement("div");
@@ -55,6 +56,7 @@ const displayLabel = (labels) => {
 };
 
 const displayWordCard = (words) => {
+  document.getElementById("card-spinner").classList.add("hidden");
   const cardContainer = document.getElementById("card-container");
   if (words.length <= 0) {
     document.getElementById("length-error").classList.remove("hidden");
