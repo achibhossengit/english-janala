@@ -40,5 +40,10 @@ const handleLabelClick = (label_no, e) => {
   fetchWordsByLabel(label_no);
 };
 
+const handleVoiceClick = (text, event)=>{
+  event.stopPropagation();
+  speakText(text)
+}
+
 logout();
 fetchLabel();

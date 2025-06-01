@@ -73,7 +73,7 @@ const displayWordCard = (words) => {
             <button class="px-3 py-1 bg-base-300 rounded-sm hover:cursor-pointer">
                 <i class="fa-solid fa-exclamation"></i>
             </button>
-            <button class="px-3 py-1 bg-base-300 rounded-sm hover:cursor-pointer">
+            <button onclick="handleVoiceClick('${word.word}', event)" class="px-3 py-1 bg-base-300 rounded-sm hover:cursor-pointer">
                 <i class="fa-solid fa-volume-high"></i>
             </button>
         </div>
