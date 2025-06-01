@@ -55,7 +55,7 @@ const displayWordCard = (words) => {
   words.forEach((word) => {
     const newCard = document.createElement("div");
     newCard.innerHTML = `
-    <div id=${word.id} class="p-4 md:p-5 bg-white text-center space-y-3 rounded-md">
+    <div onclick="handleWordClick(${word.id})" id=${word.id} class="p-4 md:p-5 bg-white text-center space-y-3 rounded-md">
         <h3 class="text-lg md:text-xl font-bold poppins-bold">${word.word}</h3>
         <p class="text-sm md:text-base font-semibold poppins-bold">Meaning/Prounciation</p>
         <p class="text-sm md:text-xl text-gray-600 font-bold hind-siliguri-medium">"${word.meaning} / ${word.pronunciation}"</p>
@@ -95,5 +95,5 @@ const fetchWordsByLabel = (label_no) => {
     .then((data) => displayWordCard(data.data));
 };
 
-logout();
+// logout();
 fetchLabel();
