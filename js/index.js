@@ -35,18 +35,21 @@ const displayLabel = (labels) => {
   labels.forEach((label) => {
     const newLabel = document.createElement("div");
     newLabel.innerHTML = `
-      <button onclick="handleLabelClick(${label.level_no})" class="btn btn-sm btn-soft btn-primary border-blue-700 text-sm md:text-base">
+      <button class="level-btn btn btn-sm btn-soft btn-primary border-blue-700 text-sm md:text-base">
         <i class="fa-solid fa-book-open"></i> Lession-${label.level_no}
       </button>
     `;
+    newLabel.addEventListener("click", (e) =>
+      handleLabelClick(label.level_no, e)
+    );
     labelContainer.appendChild(newLabel);
   });
 };
 
 const displayWordCard = (words) => {
   const cardContainer = document.getElementById("card-container");
-  if(words.length <= 0){
-    document.getElementById('length-error').classList.remove('hidden')
+  if (words.length <= 0) {
+    document.getElementById("length-error").classList.remove("hidden");
     return;
   }
   words.forEach((word) => {
@@ -70,10 +73,13 @@ const displayWordCard = (words) => {
   });
 };
 
-const handleLabelClick = (label_no) => {
+const handleLabelClick = (label_no, e) => {
+  const allBtn = document.getElementsByClassName("level-btn");
+  for (const btn of allBtn) btn.classList.remove("btn-active");
+  e.target.classList.add("btn-active");
   document.getElementById("card-container").innerHTML = "";
-  document.getElementById("select-error").classList.add('hidden');
-  document.getElementById('length-error').classList.add('hidden')
+  document.getElementById("select-error").classList.add("hidden");
+  document.getElementById("length-error").classList.add("hidden");
   fetchWordsByLabel(label_no);
 };
 
