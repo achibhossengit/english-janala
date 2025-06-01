@@ -45,6 +45,10 @@ const displayLabel = (labels) => {
 
 const displayWordCard = (words) => {
   const cardContainer = document.getElementById("card-container");
+  if(words.length <= 0){
+    document.getElementById('length-error').classList.remove('hidden')
+    return;
+  }
   words.forEach((word) => {
     const newCard = document.createElement("div");
     newCard.innerHTML = `
@@ -68,6 +72,8 @@ const displayWordCard = (words) => {
 
 const handleLabelClick = (label_no) => {
   document.getElementById("card-container").innerHTML = "";
+  document.getElementById("select-error").classList.add('hidden');
+  document.getElementById('length-error').classList.add('hidden')
   fetchWordsByLabel(label_no);
 };
 
