@@ -37,7 +37,7 @@
 </head>
 
 <body class="">
-    <header id="navbar" class="border-b-2 border-gray-300 bg-gray-100">
+    <header id="navbar" class="border-b-2 border-gray-300 bg-gray-100 sticky top-0 z-10">
         <nav
             class="flex flex-col justify-center gap-3 md:gap-0 md:flex-row md:justify-between items-center py-5 container mx-auto px-5">
             <div class="flex items-center gap-2 text-xl font-bold">
@@ -46,15 +46,18 @@
                 <p class="tiro-bangla-regular">জানালা</p>
             </div>
             <div class="flex gap-3 items-center poppins-bold">
-                <a href="#FAQ" class="btn btn-sm btn-soft btn-primary border-blue-700"><i class="fa-solid fa-question"></i>
+                <a href="#FAQ" class="btn btn-sm btn-soft btn-primary border-blue-700"><i
+                        class="fa-solid fa-question"></i>
                     FAQ</a>
-                <a href="#vocub" class="btn btn-sm btn-soft btn-primary border-blue-700"><i class="fa-solid fa-book-open"></i>
+                <a href="#vocub" class="btn btn-sm btn-soft btn-primary border-blue-700"><i
+                        class="fa-solid fa-book-open"></i>
                     Learn</a>
                 <button onclick="logout()" class="btn btn-sm btn-soft btn-primary border-blue-700"><i
                         class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
             </div>
         </nav>
     </header>
+
     <!-- hero section -->
     <section id="hero" class="container flex justify-center mx-auto px-5 min-h-screen">
         <div class="flex flex-col-reverse md:flex-row md:justify-between items-center">
@@ -77,8 +80,9 @@
         </div>
     </section>
 
-    <!-- vocabulary section -->
-    <section id="vocub" class="container mx-auto space-y-7 px-5 min-h-screen mt-10">
+    <!-- vocabulary section with scroll-margin-top -->
+    <section id="vocub"
+        class="scroll-mt-[80px] md:scroll-mt-[90px] container mx-auto space-y-7 px-5 min-h-screen mt-5">
         <h1 class="text-center text-xl md:text-2xl lg:text-3xl font-bold">
             <span class="text-[#00BCFF] poppins-bold">Let's</span> Learn Vocabularies
         </h1>
@@ -127,8 +131,8 @@
         </div>
     </section>
 
-    <!-- FAQ section -->
-    <section id="FAQ" class="container mx-auto px-5 my-32">
+    <!-- FAQ section with scroll-margin-top -->
+    <section id="FAQ" class="scroll-mt-[80px] md:scroll-mt-[90px] container mx-auto px-5 my-32">
         <h1 class="text-center text-xl md:text-2xl lg:text-3xl font-bold mb-10">
             <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h1>
