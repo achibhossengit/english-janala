@@ -30,49 +30,6 @@ const logout = () => {
   faq.classList.add("hidden");
 };
 
-const displayLabel = (labels) => {
-  const labelContainer = document.getElementById("label-container");
-  labels.forEach((label) => {
-    const newLabel = document.createElement("div");
-    newLabel.innerHTML = `
-      <button class="level-btn btn btn-sm btn-soft btn-primary border-blue-700 text-sm md:text-base">
-        <i class="fa-solid fa-book-open"></i> Lession-${label.level_no}
-      </button>
-    `;
-    newLabel.addEventListener("click", (e) =>
-      handleLabelClick(label.level_no, e)
-    );
-    labelContainer.appendChild(newLabel);
-  });
-};
-
-const displayWordCard = (words) => {
-  const cardContainer = document.getElementById("card-container");
-  if (words.length <= 0) {
-    document.getElementById("length-error").classList.remove("hidden");
-    return;
-  }
-  words.forEach((word) => {
-    const newCard = document.createElement("div");
-    newCard.innerHTML = `
-    <div onclick="handleWordClick(${word.id})" id=${word.id} class="p-4 md:p-5 bg-white text-center space-y-3 rounded-md">
-        <h3 class="text-lg md:text-xl font-bold poppins-bold">${word.word}</h3>
-        <p class="text-sm md:text-base font-semibold poppins-bold">Meaning/Prounciation</p>
-        <p class="text-sm md:text-xl text-gray-600 font-bold hind-siliguri-medium">"${word.meaning} / ${word.pronunciation}"</p>
-        <div class="flex justify-between items-center mt-5">
-            <button class="px-3 py-1 bg-base-300 rounded-sm hover:cursor-pointer">
-                <i class="fa-solid fa-exclamation"></i>
-            </button>
-            <button class="px-3 py-1 bg-base-300 rounded-sm hover:cursor-pointer">
-                <i class="fa-solid fa-volume-high"></i>
-            </button>
-        </div>
-    </div>
-    `;
-    cardContainer.appendChild(newCard);
-  });
-};
-
 const handleLabelClick = (label_no, e) => {
   const allBtn = document.getElementsByClassName("level-btn");
   for (const btn of allBtn) btn.classList.remove("btn-active");
@@ -83,17 +40,5 @@ const handleLabelClick = (label_no, e) => {
   fetchWordsByLabel(label_no);
 };
 
-const fetchLabel = () => {
-  fetch("https://openapi.programming-hero.com/api/levels/all")
-    .then((res) => res.json())
-    .then((data) => displayLabel(data.data));
-};
-
-const fetchWordsByLabel = (label_no) => {
-  fetch(`https://openapi.programming-hero.com/api/level/${label_no}`)
-    .then((res) => res.json())
-    .then((data) => displayWordCard(data.data));
-};
-
-// logout();
+logout();
 fetchLabel();
